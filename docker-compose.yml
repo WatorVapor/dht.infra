@@ -22,8 +22,6 @@ services:
       - /storage/dhtfs/cluster/dht_mesh_daemon/kword_store_mongodb:/data/db
       - /dev/shm:/dev/shm
     environment:
-      MONGO_INITDB_ROOT_USERNAME: EBWzun82iVjW
-      MONGO_INITDB_ROOT_PASSWORD: RNQCeZn2aqqR
     command: --serviceExecutor adaptive --unixSocketPrefix /dev/shm --filePermissions 777
     deploy:
       resources:
