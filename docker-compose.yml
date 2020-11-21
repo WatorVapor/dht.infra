@@ -21,7 +21,6 @@ services:
     volumes:
       - /storage/dhtfs/cluster/dht_mesh_daemon/kword_store_mongodb:/data/db
       - /dev/shm:/dev/shm
-      - ./mongo/mongod.conf:/etc/mongo/mongod.conf
     environment:
       MONGO_INITDB_ROOT_USERNAME: EBWzun82iVjW
       MONGO_INITDB_ROOT_PASSWORD: RNQCeZn2aqqR
