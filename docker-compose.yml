@@ -16,18 +16,16 @@ services:
         reservations:
           cpus: '0.1'
           memory: 128M
-    network_mode: "none"
   mongo-unix-socket:
     image: mongo:bionic
     volumes:
       - /storage/dhtfs/cluster/dht_mesh_daemon/kword_store_mongodb:/data/db
       - /dev/shm:/dev/shm
-      - /dev/shm/dht.ermu.mongodb:/tmp
+      - ./mongo/mongod.conf:/etc/mongo/mongod.conf
     environment:
       MONGO_INITDB_ROOT_USERNAME: EBWzun82iVjW
       MONGO_INITDB_ROOT_PASSWORD: RNQCeZn2aqqR
-    ports:
-      - "127.0.0.1:27018:27017"
+    command: --serviceExecutor adaptive --unixSocketPrefix /dev/shm --filePermissions 777
     deploy:
       resources:
         limits:
