@@ -23,12 +23,12 @@ services:
       - /dev/shm:/dev/shm
     environment:
       TZ: Asia/Tokyo
-    command: --serviceExecutor adaptive --unixSocketPrefix /dev/shm --filePermissions 777
+    command: --serviceExecutor adaptive --unixSocketPrefix /dev/shm --filePermissions 0777
     deploy:
       resources:
         limits:
-          cpus: '1.0'
-          memory: 256M
+          cpus: '2.0'
+          memory: 1G
         reservations:
-          cpus: '0.4'
+          cpus: '0.5'
           memory: 128M
